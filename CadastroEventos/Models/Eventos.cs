@@ -8,5 +8,23 @@
         public int NumeroParticipantes { get; set; }
         public string Local { get; set; }
         public double CustoPorParticipante { get; set; }
+    
+    public int DuracaoEmDias
+        {
+            get
+            {
+                TimeSpan duracao = DataTermino - DataInicio;
+                return duracao.Days;
+            }
+        }
+
+        public double CustoTotal
+        {
+            get
+            {
+                return NumeroParticipantes * CustoPorParticipante;
+            }
+        }
     }
 }
+    
